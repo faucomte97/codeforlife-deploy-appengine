@@ -8,6 +8,7 @@ pip install git+https://github.com/PyGithub/PyGithub.git@ba50af5
 pip install "urllib3==1.22" --force-reinstall
 
 pip install -t lib codeforlife-portal
+pip install -t lib git+https://github.com/ocadotechnology/rapid-router.git@migrate-duplicate-key
 if [ "$ENVIRONMENT" = "default" ]
 then
     pip install -t lib --upgrade --no-deps aimmo
