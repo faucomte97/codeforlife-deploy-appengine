@@ -6,6 +6,7 @@ gem install sass --version 3.3.4
 rbenv rehash
 pip install git+https://github.com/PyGithub/PyGithub.git@ba50af5
 pip install "urllib3==1.22" --force-reinstall
+pip install cryptography
 
 pip install -t lib codeforlife-portal
 if [ "$ENVIRONMENT" = "default" ]
