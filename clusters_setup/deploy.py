@@ -122,28 +122,6 @@ def restart_pods(game_creator_yaml, ingress_yaml):
     )
 
 
-def delete_old_game_token():
-    for secret in api_instance.list_namespaced_secret("default").items:
-        if secret.metadata.name is "game-token":
-            api_instance.delete_namespaced_secret(
-                name=secret.metadata.name, namespace="default"
-            )
-            break
-
-
-def generate_game_token():
-    bashCommand = "echo {} | md5 | base64 | head -c 32".format(Fernet.generate_key()))
-    process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, shell=True)
-    token, _ = process.communicate()
-    api_instance.create_namespaced_secret(
-        namespace="default",
-        body=kubernetes.client.V1Secret(
-            data={"token": token},
-            metadata=kubernetes.client.V1ObjectMeta(name="game-token"),
-        ),
-    )
-
-
 def main(module_name):
     """
     :param module_name: The environment (ie. staging, etc).
@@ -164,8 +142,6 @@ def main(module_name):
     )
 
     restart_pods(game_creator_rc, ingress)
-    delete_old_game_token()
-    generate_game_token()
 
 
 if __name__ == "__main__":
