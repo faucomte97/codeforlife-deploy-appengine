@@ -4,7 +4,6 @@ import sys
 
 import kubernetes
 import yaml
-from cryptography.fernet import Fernet
 
 # Root directory of the project.
 BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
