@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: aimmo-game-creator
-        image: ocadotechnology/aimmo-game-creator:latest
+        image: dent50cent/aimmo-game-creator:test
         ports:
         - containerPort: 80
         env:

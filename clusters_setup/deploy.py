@@ -16,7 +16,7 @@ def get_aimmo_version():
     sys.path.append(LIB_DIR)
     from aimmo import _version
 
-    return _version.get_versions()["version"]
+    return "test"
 
 
 def create_ingress_yaml(module_name):
