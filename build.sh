@@ -7,7 +7,7 @@ rbenv rehash
 pip install git+https://github.com/PyGithub/PyGithub.git@ba50af5
 pip install "urllib3==1.22" --force-reinstall
 
-pip install git+https://github.com/ocadotechnology/codeforlife-portal.git@test_permissions_on_dev
+pip install -t lib git+https://github.com/ocadotechnology/codeforlife-portal.git@test_permissions_on_dev
 if [ "$ENVIRONMENT" = "default" ]
 then
     pip install -t lib --upgrade --no-deps aimmo
