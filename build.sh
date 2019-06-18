@@ -7,13 +7,8 @@ rbenv rehash
 pip install git+https://github.com/PyGithub/PyGithub.git@ba50af5
 pip install "urllib3==1.22" --force-reinstall
 
-pip install -t lib git+https://github.com/ocadotechnology/codeforlife-portal.git@test_permissions_on_dv
-if [ "$ENVIRONMENT" = "default" ]
-then
-    pip install -t lib --upgrade --no-deps aimmo
-else
-    pip install -t lib --pre --upgrade --no-deps aimmo
-fi
+pip install -t lib codeforlife-portal
+pip install git+https://github.com/ocadotechnology/aimmo.git@trying_to_fix_permissions
 
 python get_latest_aimmo_unity_release.py
 
