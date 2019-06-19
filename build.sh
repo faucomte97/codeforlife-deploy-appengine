@@ -8,7 +8,7 @@ pip install git+https://github.com/PyGithub/PyGithub.git@ba50af5
 pip install "urllib3==1.22" --force-reinstall
 
 pip install -t lib git+https://github.com/ocadotechnology/codeforlife-portal.git@test_permissions_on_dev
-pip install git+https://github.com/ocadotechnology/aimmo.git@trying_to_fix_permissions#egg=aimmo
+pip install -t lib --no-cache-dir git+https://github.com/ocadotechnology/aimmo.git@trying_to_fix_permissions#egg=aimmo
 
 python get_latest_aimmo_unity_release.py
 
