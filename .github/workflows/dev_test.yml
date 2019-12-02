@@ -1,6 +1,9 @@
 name: Deploy to Dev
 
-on: [deployment]
+on: 
+  push:
+    branches:
+    - !master
 
 jobs:
   deployment:
